@@ -1,8 +1,8 @@
-import js from '@eslint/js';
-import tseslint from '@typescript-eslint/eslint-plugin';
-import tsparser from '@typescript-eslint/parser';
-import prettierConfig from 'eslint-config-prettier';
-import unicorn from 'eslint-plugin-unicorn';
+import js from '@eslint/js'
+import tseslint from '@typescript-eslint/eslint-plugin'
+import tsparser from '@typescript-eslint/parser'
+import prettierConfig from 'eslint-config-prettier'
+import unicorn from 'eslint-plugin-unicorn'
 
 export default [
   js.configs.recommended,
@@ -10,18 +10,11 @@ export default [
   {
     files: ['**/*.ts', '**/*.tsx'],
     languageOptions: {
+      env: 'browser',
       parser: tsparser,
       parserOptions: {
         ecmaVersion: 2020,
         sourceType: 'module',
-      },
-      globals: {
-        document: 'readonly',
-        window: 'readonly',
-        console: 'readonly',
-        HTMLElement: 'readonly',
-        HTMLDivElement: 'readonly',
-        HTMLButtonElement: 'readonly',
       },
     },
     plugins: {
@@ -46,4 +39,4 @@ export default [
   {
     ignores: ['dist/**', 'node_modules/**'],
   },
-];
+]
